@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+
+    <script>
+        rssurl = "eventfeed.xml";
+        
+        $.get(rssurl, function(data) {
+            var $xml = $(data);
+            $xml.find("item").each(function() {
+                var $this = $(this),
+                    item = {
+                        title: $this.find("title").text(),
+                        link: $this.find("link").text(),
+                        description: $this.find("description").text(),
+                        pubDate: $this.find("pubDate").text(),
+                        author: $this.find("author").text()
+                    }
+                    //Do something with item here...
+                    console.log(data);
+                   
+            });
+        });
+        
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
