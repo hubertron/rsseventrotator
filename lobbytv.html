@@ -42,7 +42,7 @@
                     // inner template for each entry
                     // default: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>'
                     // valid values: any string
-                    entryTemplate: '<li>{title}<br/>{teaserImage}{bodyPlain}</li>',
+                    entryTemplate: '<li>{title}<br/>{teaserImage}{bodyPlain}{eventCategory}{eventCategory1}</li>',
 
                     // additional token definition for in-template-usage
                     // default: {}
@@ -51,9 +51,21 @@
                         foo: 'bar',
                         bar: function(entry, tokens) {
                             return entry.title
+                        },
+                        // Why is this returning undefined?
+                        eventCategory: function (entry, tokens) {
+                            return entry.eventCategory
+                            
+                        },
+                        // But this isn't?
+                        eventCategory1: function (entry, tokens) {
+                            return entry.link
+                            
+                            
                         }
                     },
-
+                    
+    
                     // formats the date with moment.js (optional)
                     // default: 'dddd MMM Do'
                     // valid values: see http://momentjs.com/docs/#/displaying/
@@ -88,17 +100,22 @@
                     // this can be useful when you need to remove a spinner or something similar
                     onData: function() {}
                 },
+                
 
                 // callback function
                 // called after feeds are successfully loaded and after animations are done
                 function callback() {}
             )
         })
+
     </script>
 </head>
 
 <body>
+    
     <div id="rss-feeds"></div>
+    
+    
 </body>
 
 </html>

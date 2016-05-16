@@ -6,7 +6,7 @@
     python -m SimpleHTTPServer
     
     
-The example is based on the following Repo (https://github.com/sdepold/jquery-rss)[https://github.com/sdepold/jquery-rss]
+The example is based on the following Repo https://github.com/sdepold/jquery-rss
 
 
 *To Do*

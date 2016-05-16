@@ -282,6 +282,7 @@
       title:     entry.title,
       body:      entry.content,
       shortBody: entry.contentSnippet,
+      eventCategory:  entry.eventCategory,
 
       bodyPlain: (function (entry) {
         var result = entry.content
